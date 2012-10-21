@@ -58,6 +58,7 @@ ofVec2f ofxBox2dPulleyJoint::getReactionForce(float inv_dt) const {
 b2Vec2 ofxBox2dPulleyJoint::getReactionForceB2D(float inv_dt) const {
 	return joint->GetReactionForce(inv_dt);
 }
+
 float ofxBox2dPulleyJoint::getReactionTorque(float inv_dt) const {
 	return (float)joint->GetReactionTorque(inv_dt);
 }

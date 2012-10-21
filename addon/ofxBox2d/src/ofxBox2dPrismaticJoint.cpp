@@ -45,6 +45,11 @@ void ofxBox2dPrismaticJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2V
 }
 
 //----------------------------------------
+b2PrismaticJoint* ofxBox2dPrismaticJoint::getJoint(){
+    return joint;
+}
+
+//----------------------------------------
 float ofxBox2dPrismaticJoint::getLowerLimit(){
     return (float)joint->GetLowerLimit();
 }
@@ -102,6 +107,7 @@ ofVec2f ofxBox2dPrismaticJoint::getReactionForce(float inv_dt) const {
 b2Vec2 ofxBox2dPrismaticJoint::getReactionForceB2D(float inv_dt) const {
 	return joint->GetReactionForce(inv_dt);
 }
+
 float ofxBox2dPrismaticJoint::getReactionTorque(float inv_dt) const {
 	return (float)joint->GetReactionTorque(inv_dt);
 }

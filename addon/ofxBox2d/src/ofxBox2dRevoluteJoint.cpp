@@ -66,6 +66,11 @@ void ofxBox2dRevoluteJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Ve
 }
 
 //----------------------------------------
+b2RevoluteJoint* ofxBox2dRevoluteJoint::getJoint(){
+    return joint;
+}
+
+//----------------------------------------
 float ofxBox2dRevoluteJoint::getLowerLimit(){
     return (float)joint->GetLowerLimit();
 }

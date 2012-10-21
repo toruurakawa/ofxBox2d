@@ -130,6 +130,7 @@ ofVec2f ofxBox2dDistanceJoint::getReactionForce(float inv_dt) const {
 b2Vec2 ofxBox2dDistanceJoint::getReactionForceB2D(float inv_dt) const {
 	return joint->GetReactionForce(inv_dt);
 }
+
 float ofxBox2dDistanceJoint::getReactionTorque(float inv_dt) const {
 	return (float)joint->GetReactionTorque(inv_dt);
 }

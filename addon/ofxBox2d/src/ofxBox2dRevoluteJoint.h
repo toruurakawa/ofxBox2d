@@ -23,6 +23,7 @@ class ofxBox2dRevoluteJoint : public ofxBox2dBaseJoint {
                       float lowerLimitRadian, float upperLimitRadian, bool bEnableLimit,
                       float motorSpeed, float maxMotorTorque, bool bEnableMotor, bool bCollideConnected);
     
+        b2RevoluteJoint*   getJoint();
     
         float   getLowerLimit();
         float   getUpperLimit();

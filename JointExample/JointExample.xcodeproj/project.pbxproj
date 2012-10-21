@@ -54,6 +54,7 @@
 		9C2EF1AF1633D731007B63A8 /* ofxBox2dRevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C2EF1AD1633D731007B63A8 /* ofxBox2dRevoluteJoint.cpp */; };
 		9C2EF1BC16340FCE007B63A8 /* ofxBox2dPrismaticJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C2EF1BA16340FCE007B63A8 /* ofxBox2dPrismaticJoint.cpp */; };
 		9C2EF1C016343828007B63A8 /* ofxBox2dPulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C2EF1BE16343828007B63A8 /* ofxBox2dPulleyJoint.cpp */; };
+		9C87B0371634426F00AFBDB4 /* ofxBox2dGearJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B0351634426F00AFBDB4 /* ofxBox2dGearJoint.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -208,6 +209,8 @@
 		9C2EF1BB16340FCE007B63A8 /* ofxBox2dPrismaticJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dPrismaticJoint.h; sourceTree = "<group>"; };
 		9C2EF1BE16343828007B63A8 /* ofxBox2dPulleyJoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBox2dPulleyJoint.cpp; sourceTree = "<group>"; };
 		9C2EF1BF16343828007B63A8 /* ofxBox2dPulleyJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dPulleyJoint.h; sourceTree = "<group>"; };
+		9C87B0351634426F00AFBDB4 /* ofxBox2dGearJoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBox2dGearJoint.cpp; sourceTree = "<group>"; };
+		9C87B0361634426F00AFBDB4 /* ofxBox2dGearJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dGearJoint.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -444,6 +447,8 @@
 				9C2EF1BB16340FCE007B63A8 /* ofxBox2dPrismaticJoint.h */,
 				9C2EF1BE16343828007B63A8 /* ofxBox2dPulleyJoint.cpp */,
 				9C2EF1BF16343828007B63A8 /* ofxBox2dPulleyJoint.h */,
+				9C87B0351634426F00AFBDB4 /* ofxBox2dGearJoint.cpp */,
+				9C87B0361634426F00AFBDB4 /* ofxBox2dGearJoint.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				9C2EF1AF1633D731007B63A8 /* ofxBox2dRevoluteJoint.cpp in Sources */,
 				9C2EF1BC16340FCE007B63A8 /* ofxBox2dPrismaticJoint.cpp in Sources */,
 				9C2EF1C016343828007B63A8 /* ofxBox2dPulleyJoint.cpp in Sources */,
+				9C87B0371634426F00AFBDB4 /* ofxBox2dGearJoint.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

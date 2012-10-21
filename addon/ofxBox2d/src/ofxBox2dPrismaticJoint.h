@@ -21,7 +21,9 @@ class ofxBox2dPrismaticJoint : public ofxBox2dBaseJoint {
         void    setup(b2World*, b2Body *body1, b2Body *body2, b2Vec2 anchor, b2Vec2 axis, float angle,
                       float lowerTransition, float upperTransition, bool bEnableLimit,
                       float maxMotorForce, float motorSpeed, bool bEnableMotor, bool bCollideConnected);
-        
+    
+        b2PrismaticJoint* getJoint();
+    
         float   getLowerLimit();
         float   getUpperLimit();
         void    setLimits(float, float);
