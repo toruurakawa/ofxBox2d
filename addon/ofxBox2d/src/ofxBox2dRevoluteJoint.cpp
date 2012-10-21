@@ -18,6 +18,7 @@ void ofxBox2dRevoluteJoint::destroy(){
     if (world == NULL || joint == NULL) return;
 	world->DestroyJoint(joint);
 	joint       = NULL;
+    alive       = false;
 }
 
 //----------------------------------------

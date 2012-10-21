@@ -19,9 +19,10 @@ protected:
 public:
     ofxBox2dGearJoint();
     void    destroy();
+    
     void    setup(b2World *w,
                   ofxBox2dRevoluteJoint* revoluteJoint, ofxBox2dPrismaticJoint* prismaticJoint,
-                  float ratio, bool bCollideconnected);
+                  float ratio, bool bCollideConnected);
     
     void    setRatio(float);
     float   getRatio();

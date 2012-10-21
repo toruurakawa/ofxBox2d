@@ -9,7 +9,6 @@
 
 #include "ofMain.h"
 #include "Box2D.h"
-//#include "ofxBox2dUtils.h"
 
 class ofxBox2dBaseJoint {
     protected:

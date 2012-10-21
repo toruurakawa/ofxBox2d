@@ -6,7 +6,6 @@
 //
 
 #include "ofxBox2dDistanceJoint.h"
-#include "ofxBox2dUtils.h"
 
 //----------------------------------------
 ofxBox2dDistanceJoint::ofxBox2dDistanceJoint(){
@@ -94,7 +93,7 @@ void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2,
 
 //----------------------------------------
 void ofxBox2dDistanceJoint::setLength(float val){
-    joint->SetLength((float32)b2dNum(val));
+    joint->SetLength((float32)val/30.0f);
 }
 
 //----------------------------------------

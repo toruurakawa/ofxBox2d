@@ -18,12 +18,13 @@ void ofxBox2dGearJoint::destroy(){
     if (world == NULL || joint == NULL) return;
 	world->DestroyJoint(joint);
 	joint       = NULL;
+    alive       = false;
 }
 
 //----------------------------------------
 void ofxBox2dGearJoint::setup(b2World* w,
                               ofxBox2dRevoluteJoint *revoluteJoint, ofxBox2dPrismaticJoint *prismaticJoint,
-                              float ratio, bool bCollideconnected){
+                              float ratio, bool bCollideConnected){
     
     setWorld(w);
     
@@ -31,7 +32,7 @@ void ofxBox2dGearJoint::setup(b2World* w,
     jointDef.joint1             = revoluteJoint->getJoint();
     jointDef.joint2             = prismaticJoint->getJoint();
     jointDef.ratio              = ratio;
-    jointDef.collideConnected   = bCollideconnected;
+    jointDef.collideConnected   = bCollideConnected;
     
     joint = (b2GearJoint*)world->CreateJoint(&jointDef);
     

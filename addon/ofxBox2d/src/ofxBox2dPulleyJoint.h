@@ -17,6 +17,7 @@ class ofxBox2dPulleyJoint : public ofxBox2dBaseJoint {
     public:
         ofxBox2dPulleyJoint();
         void    destroy();
+    
         void    setup(b2World *w, b2Body* body1, b2Body* body2,
                       const b2Vec2& groundAnchor1, const b2Vec2& groundAnchor2,
                       const b2Vec2& anchor1, const b2Vec2& anchor2,
