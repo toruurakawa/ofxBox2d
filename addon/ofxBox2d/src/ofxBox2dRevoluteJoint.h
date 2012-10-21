@@ -35,4 +35,10 @@ class ofxBox2dRevoluteJoint : public ofxBox2dBaseJoint {
         float   getMotorTorque();
         void    setEnableMotor(bool);
         bool    isMotorEnabled();
+    
+        //----------------------------------------
+        ofVec2f getReactionForce(float inv_dt) const;
+        b2Vec2  getReactionForceB2D(float inv_dt) const;
+        float   getReactionTorque(float inv_dt) const;
+
 };

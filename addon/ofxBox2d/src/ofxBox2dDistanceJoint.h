@@ -37,4 +37,9 @@ class ofxBox2dDistanceJoint : public ofxBox2dBaseJoint {
         void    setDampingRatio(float);
         float   getDampingRatio();
     
+        //----------------------------------------
+        ofVec2f getReactionForce(float inv_dt) const;
+        b2Vec2  getReactionForceB2D(float inv_dt) const;
+        float   getReactionTorque(float inv_dt) const;
+        
 };

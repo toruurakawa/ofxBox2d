@@ -114,4 +114,16 @@ void ofxBox2dRevoluteJoint::setEnableMotor(bool flag){
     joint->EnableMotor(flag);
 }
 
+//----------------------------------------
+ofVec2f ofxBox2dRevoluteJoint::getReactionForce(float inv_dt) const {
+	b2Vec2 vec = getReactionForceB2D(inv_dt);
+	return ofVec2f(vec.x, vec.y);
+}
+b2Vec2 ofxBox2dRevoluteJoint::getReactionForceB2D(float inv_dt) const {
+	return joint->GetReactionForce(inv_dt);
+}
+float ofxBox2dRevoluteJoint::getReactionTorque(float inv_dt) const {
+	return (float)joint->GetReactionTorque(inv_dt);
+}
+
 

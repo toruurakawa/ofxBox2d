@@ -44,18 +44,6 @@ void ofxBox2dPrismaticJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2V
     
 }
 
-//float   getLowerLimit();
-//float   getUpperLimit();
-//void    setLimits(float, float);
-//void    setEnableLimit(bool);
-//bool    isLimitEnabled();
-//bool    isMotorEnabled();
-//void    setEnableMotoe(bool);
-//void    setMotorSpeed(float);
-//float   getMotorSpeed();
-//void    setMaxMotorForce(float);
-//float   getMotorForce();
-
 //----------------------------------------
 float ofxBox2dPrismaticJoint::getLowerLimit(){
     return (float)joint->GetLowerLimit();
@@ -105,6 +93,19 @@ void ofxBox2dPrismaticJoint::setMaxMotorForce(float val){
 float ofxBox2dPrismaticJoint::getMotorForce(){
     return joint->GetMotorForce();
 }
+
+//----------------------------------------
+ofVec2f ofxBox2dPrismaticJoint::getReactionForce(float inv_dt) const {
+	b2Vec2 vec = getReactionForceB2D(inv_dt);
+	return ofVec2f(vec.x, vec.y);
+}
+b2Vec2 ofxBox2dPrismaticJoint::getReactionForceB2D(float inv_dt) const {
+	return joint->GetReactionForce(inv_dt);
+}
+float ofxBox2dPrismaticJoint::getReactionTorque(float inv_dt) const {
+	return (float)joint->GetReactionTorque(inv_dt);
+}
+
 
 
 
