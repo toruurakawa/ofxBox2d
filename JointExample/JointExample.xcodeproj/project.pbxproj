@@ -49,6 +49,8 @@
 		5FCF86EF14FECE1E00D48C59 /* ofxBox2dJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF86BF14FECE1E00D48C59 /* ofxBox2dJoint.cpp */; };
 		5FCF86F014FECE1E00D48C59 /* ofxBox2dPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF86C114FECE1E00D48C59 /* ofxBox2dPolygon.cpp */; };
 		5FCF86F114FECE1E00D48C59 /* ofxBox2dRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF86C414FECE1E00D48C59 /* ofxBox2dRect.cpp */; };
+		9C2EF1AB1633D5B1007B63A8 /* ofxBox2dBaseJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C2EF1A71633D5B1007B63A8 /* ofxBox2dBaseJoint.cpp */; };
+		9C2EF1AC1633D5B1007B63A8 /* ofxBox2dDistanceJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C2EF1A91633D5B1007B63A8 /* ofxBox2dDistanceJoint.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -193,6 +195,10 @@
 		5FCF86C514FECE1E00D48C59 /* ofxBox2dRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dRect.h; sourceTree = "<group>"; };
 		5FCF86C614FECE1E00D48C59 /* ofxBox2dRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dRender.h; sourceTree = "<group>"; };
 		5FCF86C714FECE1E00D48C59 /* ofxBox2dUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dUtils.h; sourceTree = "<group>"; };
+		9C2EF1A71633D5B1007B63A8 /* ofxBox2dBaseJoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBox2dBaseJoint.cpp; sourceTree = "<group>"; };
+		9C2EF1A81633D5B1007B63A8 /* ofxBox2dBaseJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dBaseJoint.h; sourceTree = "<group>"; };
+		9C2EF1A91633D5B1007B63A8 /* ofxBox2dDistanceJoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBox2dDistanceJoint.cpp; sourceTree = "<group>"; };
+		9C2EF1AA1633D5B1007B63A8 /* ofxBox2dDistanceJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBox2dDistanceJoint.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -419,6 +425,10 @@
 				5FCF86C514FECE1E00D48C59 /* ofxBox2dRect.h */,
 				5FCF86C614FECE1E00D48C59 /* ofxBox2dRender.h */,
 				5FCF86C714FECE1E00D48C59 /* ofxBox2dUtils.h */,
+				9C2EF1A71633D5B1007B63A8 /* ofxBox2dBaseJoint.cpp */,
+				9C2EF1A81633D5B1007B63A8 /* ofxBox2dBaseJoint.h */,
+				9C2EF1A91633D5B1007B63A8 /* ofxBox2dDistanceJoint.cpp */,
+				9C2EF1AA1633D5B1007B63A8 /* ofxBox2dDistanceJoint.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -635,6 +645,8 @@
 				5FCF86EF14FECE1E00D48C59 /* ofxBox2dJoint.cpp in Sources */,
 				5FCF86F014FECE1E00D48C59 /* ofxBox2dPolygon.cpp in Sources */,
 				5FCF86F114FECE1E00D48C59 /* ofxBox2dRect.cpp in Sources */,
+				9C2EF1AB1633D5B1007B63A8 /* ofxBox2dBaseJoint.cpp in Sources */,
+				9C2EF1AC1633D5B1007B63A8 /* ofxBox2dDistanceJoint.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

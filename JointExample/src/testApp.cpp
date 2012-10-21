@@ -25,14 +25,14 @@ void testApp::setup() {
 	// now connect each circle with a joint
 	for (int i=0; i<circles.size(); i++) {
 		
-		ofxBox2dJoint joint;
+		ofxBox2dDistanceJoint joint;
 		
 		// if this is the first point connect to the top anchor.
 		if(i == 0) {
-			joint.setup(box2d.getWorld(), anchor.body, circles[i].body);		
+			joint.setup(box2d.getWorld(), anchor.body, circles[i].body, 0, 0, 1);
 		}
 		else {
-			joint.setup(box2d.getWorld(), circles[i-1].body, circles[i].body);
+			joint.setup(box2d.getWorld(), circles[i-1].body, circles[i].body, 0, 0, 1);
 		}
 		
 		joint.setLength(25);
@@ -60,7 +60,7 @@ void testApp::draw() {
 	
 	for(int i=0; i<joints.size(); i++) {
 		ofSetHexColor(0x444342);
-		joints[i].draw();
+//		joints[i].draw();
 	}
 	
 	string info = "";
@@ -87,8 +87,8 @@ void testApp::keyPressed(int key) {
 		int b = (int)circles.size()-1; 
 
 		// now connect the new circle with a joint
-		ofxBox2dJoint joint;
-		joint.setup(box2d.getWorld(), circles[a].body, circles[b].body);
+		ofxBox2dDistanceJoint joint;
+		joint.setup(box2d.getWorld(), circles[a].body, circles[b].body, 0, 0, 1);
 		joint.setLength(25);
 		joints.push_back(joint);
 	}
