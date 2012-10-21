@@ -65,6 +65,7 @@ void testApp::draw() {
 	
 	string info = "";
 	info += "Press [n] to add a new joint\n";
+    info += "Press [d] to delete the newest joint\n";
 	info += "click and pull the chain around\n";
 	info += "FPS: "+ofToString(ofGetFrameRate(), 1)+"\n";
 	ofSetHexColor(0x444342);
@@ -92,6 +93,13 @@ void testApp::keyPressed(int key) {
 		joint.setLength(25);
 		joints.push_back(joint);
 	}
+    
+    if(key == 'd') {
+        joints[joints.size()-1].destroy();
+        joints.pop_back();
+        circles[circles.size()-1].destroy();
+        circles.pop_back();
+    }
 	
 	if(key == 't') ofToggleFullscreen();
 }

@@ -12,15 +12,10 @@
 
 class ofxBox2dDistanceJoint : public ofxBox2dBaseJoint {
     protected:
-        b2DistanceJointDef  *jointDef;
         b2DistanceJoint     *joint;
-        float               length;
-        float               freqHz;
-        float               damping;
         
     public:
         ofxBox2dDistanceJoint();
-        virtual ~ofxBox2dDistanceJoint();
         void    destroy();
     
         void    setup(b2World*, b2Body *body1, b2Body *body2,

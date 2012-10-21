@@ -14,33 +14,25 @@ ofxBox2dDistanceJoint::ofxBox2dDistanceJoint(){
 }
 
 //----------------------------------------
-ofxBox2dDistanceJoint::~ofxBox2dDistanceJoint(){
-    destroy();
-}
-
 void ofxBox2dDistanceJoint::destroy(){
-	if (!alive) return;
+    if (world == NULL || joint == NULL) return;
 	world->DestroyJoint(joint);
 	joint       = NULL;
-    jointDef    = NULL;
 	alive       = false;
 }
 
 //----------------------------------------
 void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Vec2 anchor1, b2Vec2 anchor2,
-                                  float _length, float frequencyHZ, float dampingRatio, bool bCollideConnected){
-    length                      = _length;
-    freqHz                      = frequencyHZ;
-    damping                     = dampingRatio;
-    
+                                  float length, float frequencyHZ, float dampingRatio, bool bCollideConnected){
+   
     setWorld(w);
     
 	b2DistanceJointDef jointDef;
 	jointDef.Initialize(body1, body2, anchor1, anchor2);
 	jointDef.collideConnected	= bCollideConnected;
     jointDef.length             = length;
-	jointDef.frequencyHz		= freqHz;
-	jointDef.dampingRatio		= damping;
+	jointDef.frequencyHz		= frequencyHZ;
+	jointDef.dampingRatio		= dampingRatio;
     
 	joint						= (b2DistanceJoint*)world->CreateJoint(&jointDef);
     
@@ -50,20 +42,15 @@ void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Ve
 //----------------------------------------
 void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Vec2 anchor1, b2Vec2 anchor2,
                                   float frequencyHZ, float dampingRatio, bool bCollideConnected){
-    freqHz                      = frequencyHZ;
-    damping                     = dampingRatio;
-    
+   
     setWorld(w);
     
 	b2DistanceJointDef jointDef;
 	jointDef.Initialize(body1, body2, anchor1, anchor2);
 	jointDef.collideConnected	= bCollideConnected;
-    jointDef.length             = length;
-	jointDef.frequencyHz		= freqHz;
-	jointDef.dampingRatio		= damping;
-    
-    length                      = (float)jointDef.length;
-    
+	jointDef.frequencyHz		= frequencyHZ;
+	jointDef.dampingRatio		= dampingRatio;
+        
 	joint						= (b2DistanceJoint*)world->CreateJoint(&jointDef);
     
     alive = true;
@@ -71,19 +58,16 @@ void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Ve
 
 //----------------------------------------
 void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2,
-                                  float _length, float frequencyHZ, float dampingRatio, bool bCollideConnected){
-    length                      = _length;
-    freqHz                      = frequencyHZ;
-    damping                     = dampingRatio;
-    
+                                  float length, float frequencyHZ, float dampingRatio, bool bCollideConnected){
+ 
     setWorld(w);
     
 	b2DistanceJointDef jointDef;
 	jointDef.Initialize(body1, body2, body1->GetWorldCenter(), body2->GetWorldCenter());
 	jointDef.collideConnected	= bCollideConnected;
     jointDef.length             = length;
-	jointDef.frequencyHz		= freqHz;
-	jointDef.dampingRatio		= damping;
+	jointDef.frequencyHz		= frequencyHZ;
+	jointDef.dampingRatio		= dampingRatio;
     
 	joint						= (b2DistanceJoint*)world->CreateJoint(&jointDef);
     
@@ -93,55 +77,49 @@ void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2,
 //----------------------------------------
 void ofxBox2dDistanceJoint::setup(b2World *w, b2Body *body1, b2Body *body2,
                                   float frequencyHZ, float dampingRatio, bool bCollideConnected){
-    freqHz                      = frequencyHZ;
-    damping                     = dampingRatio;
-    
+  
     setWorld(w);
     
 	b2DistanceJointDef jointDef;
 	jointDef.Initialize(body1, body2, body1->GetWorldCenter(), body2->GetWorldCenter());
 	jointDef.collideConnected	= bCollideConnected;
-    jointDef.length             = length;
-	jointDef.frequencyHz		= freqHz;
-	jointDef.dampingRatio		= damping;
-    
-    length                      = (float)jointDef.length;
-    
+	jointDef.frequencyHz		= frequencyHZ;
+	jointDef.dampingRatio		= dampingRatio;
+        
 	joint						= (b2DistanceJoint*)world->CreateJoint(&jointDef);
+    
+    alive = true;
 }
 
 
 //----------------------------------------
 void ofxBox2dDistanceJoint::setLength(float val){
-    length  =   val;
-    joint->SetLength((float32)b2dNum(length));
+    joint->SetLength((float32)b2dNum(val));
 }
 
 //----------------------------------------
 float ofxBox2dDistanceJoint::getLength(){
-    return length;
+    return joint->GetLength();
 }
 
 //----------------------------------------
 void ofxBox2dDistanceJoint::setFreq(float val){
-    freqHz  =   val;
-    joint->SetFrequency((float32)freqHz);
+    joint->SetFrequency((float32)val);
 }
 
 //----------------------------------------
 float ofxBox2dDistanceJoint::getFreq(){
-    return freqHz;
+    return joint->GetFrequency();
 }
 
 //----------------------------------------
 void ofxBox2dDistanceJoint::setDampingRatio(float val){
-    damping =   val;
-    joint->SetDampingRatio((float32)damping);
+    joint->SetDampingRatio((float32)val);
 }
 
 //----------------------------------------
 float ofxBox2dDistanceJoint::getDampingRatio(){
-    return damping;
+    return joint->GetDampingRatio();
 }
 
 

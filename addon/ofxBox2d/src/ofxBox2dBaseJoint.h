@@ -14,10 +14,6 @@
 class ofxBox2dBaseJoint {
     protected:
         b2World			*world;
-        b2Body          *bodyA;
-        b2Body          *bodyB;
-        b2Vec2          *anchorPointA;
-        b2Vec2          *anchorPointB;
         bool            alive;
     
     public:
