@@ -19,9 +19,14 @@ class ofxBox2dRevoluteJoint : public ofxBox2dBaseJoint {
         void    setup(b2World*, b2Body *body1, b2Body *body2, b2Vec2 anchor, float angle,
                       float lowerLimitRadian, float upperLimitRadian, bool bEnableLimit,
                       float motorSpeed, float maxMotorTorque, bool bEnableMotor, bool bCollideConnected);
-      
+        void    setup(b2World*, b2Body *body1, b2Body *body2, b2Vec2 anchor,
+                      float lowerLimitRadian, float upperLimitRadian, bool bEnableLimit,
+                      float motorSpeed, float maxMotorTorque, bool bEnableMotor, bool bCollideConnected);
+    
+    
         float   getLowerLimit();
         float   getUpperLimit();
+        void    setLimits(float, float);
         void    setEnableLimit(bool);
         bool    isLimitEnabled();
         void    setMotorSpeed(float);

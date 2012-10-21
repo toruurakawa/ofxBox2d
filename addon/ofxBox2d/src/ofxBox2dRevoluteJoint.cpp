@@ -7,19 +7,6 @@
 
 
 #include "ofxBox2dRevoluteJoint.h"
-//ofxBox2dRevoluteJoint();
-//virtual ~ofxBox2dRevoluteJoint();
-//void    destroy();
-//
-//float   getLowerAngel();
-//float   getUpperAngle();
-//void    setEnableLimit(bool);
-//bool    isEnableLimit();
-//void    setMaxMotorLimit(float);
-//float   getMaxMotorLimit();
-//void    setEnableMotor(bool);
-//bool    isEnableMotor();
-
 
 //----------------------------------------
 ofxBox2dRevoluteJoint::ofxBox2dRevoluteJoint(){
@@ -57,6 +44,28 @@ void ofxBox2dRevoluteJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Ve
 }
 
 //----------------------------------------
+void ofxBox2dRevoluteJoint::setup(b2World *w, b2Body *body1, b2Body *body2, b2Vec2 anchor,
+                                  float lowerLimitRadian, float upperLimitRadian, bool bEnableLimit,
+                                  float motorSpeed, float maxMotorTorque, bool bEnableMotor,
+                                  bool bCollideConnected){
+    setWorld(w);
+    
+    b2RevoluteJointDef jointDef;
+	jointDef.Initialize(body1, body2, anchor);
+	jointDef.collideConnected	= bCollideConnected;
+    jointDef.lowerAngle         = lowerLimitRadian;
+    jointDef.upperAngle         = upperLimitRadian;
+    jointDef.enableLimit        = bEnableLimit;
+    jointDef.motorSpeed         = motorSpeed;
+    jointDef.maxMotorTorque     = maxMotorTorque;
+    jointDef.enableMotor        = bEnableMotor;
+    
+	joint						= (b2RevoluteJoint*)world->CreateJoint(&jointDef);
+    
+    alive = true;
+}
+
+//----------------------------------------
 float ofxBox2dRevoluteJoint::getLowerLimit(){
     return (float)joint->GetLowerLimit();
 }
@@ -64,6 +73,10 @@ float ofxBox2dRevoluteJoint::getLowerLimit(){
 //----------------------------------------
 float ofxBox2dRevoluteJoint::getUpperLimit(){
     return (float)joint->GetUpperLimit();
+}
+
+void ofxBox2dRevoluteJoint::setLimits(float lower, float upper){
+    joint->SetLimits((float32)lower, (float32)upper);
 }
 
 //----------------------------------------
